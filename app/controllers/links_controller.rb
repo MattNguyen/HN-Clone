@@ -6,13 +6,6 @@ class LinksController < ApplicationController
 
 	def create
 		@link = Link.new(params[:link])
-		
-		if @link.save
-			flash[:success] = "Success, human."
-		else
-			flash[:error] = "You broke it."
-		end
-
 		redirect_to :links
 	end
 

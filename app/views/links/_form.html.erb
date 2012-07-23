@@ -1,5 +1,5 @@
 <div class="span4">
-	<%= form_for(@link, :remote => true) do |f|%>
+	<%= form_for(@link) do |f|%>
 
 <!-- 		<% if @link.errors.any? %>
 			<div id="error_explanation">
@@ -11,7 +11,7 @@
 				</ul>
 			</div>
 		<% end -%> -->
-		
+
 		<%= f.text_field :title,:placeholder => "Title" %>
 		<%= f.text_field :url, :placeholder => "URL" %>
 
