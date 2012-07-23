@@ -1,6 +1,6 @@
 class LinksController < ApplicationController
 	def index
-		@links = Link.all
+		@links = Link.scoped.page(params[:page])
 		@link = Link.new
 	end
 
