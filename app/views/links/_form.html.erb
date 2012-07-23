@@ -1,0 +1,20 @@
+<div class="span4">
+	<%= form_for(@link, :remote => true) do |f|%>
+
+<!-- 		<% if @link.errors.any? %>
+			<div id="error_explanation">
+				<h2>				</h2>
+				<ul>
+					<% @link.errors.full_messages.each do |msg| %>
+						<li><%= msg %></li>
+					<% end -%>
+				</ul>
+			</div>
+		<% end -%> -->
+		
+		<%= f.text_field :title,:placeholder => "Title" %>
+		<%= f.text_field :url, :placeholder => "URL" %>
+
+		<%= f.submit :class => "btn submit_button" %>
+	<% end -%>
+</div>	

@@ -1,0 +1,14 @@
+<div class="span8 link_manifest">
+	<ol id="new_entries">
+	<% @links.reverse.each do |link| %>
+		<li>
+			<ul>
+				<li><%= link_to link.title, link.url %></li>
+				<li><%= link.url %></li>
+			</ul>
+		</li>
+	<% end -%>
+	</ol>
+</div>
+
+<%= render 'form' %>
