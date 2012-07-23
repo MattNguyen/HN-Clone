@@ -1,7 +1,7 @@
 <div>
   <% flash.each do |key, value| %>
     <div class="<%= flash_class(key) %> fade in">
-      <a href="#" dta-dismiss="alert" class="close">×</a>
+      <a href=<%= root_path %> dta-dismiss="alert" class="close">×</a>
       <%= value %>
     </div>
   <% end %>

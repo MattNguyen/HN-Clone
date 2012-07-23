@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.2'
 gem 'kaminari'
+gem 'omniauth-twitter'
 
 group :development, :test do
 	gem 'sqlite3'

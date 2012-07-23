@@ -1,6 +1,6 @@
 <div class="span8 link_manifest">
 	<ol id="new_entries">
-	<% @links.reverse.each do |link| %>
+	<% @links.each do |link| %>
 		<%= render 'entry', :link => link %>
 	<% end -%>
 	</ol>

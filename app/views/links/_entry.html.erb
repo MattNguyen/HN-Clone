@@ -1,6 +1,6 @@
 <li>
 	<ul>
-		<li><%= link_to link.title, link.url %></li>
+		<li><%= link_to link.title, url_with_protocol(link.url), :target => '_blank' %></li>
 		<li><%= link.url %></li>
 	</ul>
 </li>
