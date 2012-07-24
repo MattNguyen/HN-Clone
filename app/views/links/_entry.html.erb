@@ -1,6 +1,6 @@
 <li>
 	<ul>
 		<li><h3><%= link_to link.title, url_with_protocol(link.url), :target => '_blank' %></li></h3>
-		<li><%= link.url %></li>
+		<li><%= "#{link.url} via @#{link.user.twitter_handle}"%></li>
 	</ul>
 </li>

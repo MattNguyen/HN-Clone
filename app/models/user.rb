@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
-	has_many :authorizations, :links
-	validates :twitter_handle, :presence => true
+	has_many :authorizations
+	has_many :links
+	validates :twitter_handle, :presence => true, :uniqueness => true
 
 	def add_provider(auth_hash)
 	  # Check if the provider already exists, so we don't add it twice

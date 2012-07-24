@@ -1,6 +1,7 @@
 HnClone::Application.routes.draw do
 
   resources :links
+  resources :users
 
   root :to => 'links#index'
 

@@ -6,11 +6,12 @@ class LinksController < ApplicationController
 
 	def create
 		@link = Link.new(params[:link])
-		
+		@link.user = current_user || anonymous_user
+
 		heidegger = "Making itself intelligible is suicide for philosophy. But not for links, stupid."
 		flash[:error] = heidegger unless @link.save
 
-		redirect_to :links
+		redirect_to :root
 	end
 
 	def new
