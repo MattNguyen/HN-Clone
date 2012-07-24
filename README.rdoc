@@ -1,6 +1,6 @@
-==HN CLone
+==Hackifesto
 
-Site = http://blooming-scrubland-7488.herokuapp.com/
+Site = http://hackifesto.herokuapp.com/
 
 1. bundle install
 2. bundle exec rake db:migrate
