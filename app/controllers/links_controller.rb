@@ -7,7 +7,8 @@ class LinksController < ApplicationController
 	def create
 		@link = Link.new(params[:link])
 		
-		flash[:error] = "Making itself intelligible is suicide for philosophy. But not for links, stupid." unless @link.save
+		heidegger = "Making itself intelligible is suicide for philosophy. But not for links, stupid."
+		flash[:error] = heidegger unless @link.save
 
 		redirect_to :links
 	end
