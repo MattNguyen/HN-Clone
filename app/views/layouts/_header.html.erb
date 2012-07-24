@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="navbar">
+      <div class="navbar-inner">
+    		
+        <a href="#" class="title">Hackifesto</a>
+
+    		<div class="links pull-right">
+	    		<ul>
+            <% if session %>
+	    			  <li><a href="<%= root_url %>/auth/twitter">Logout, <%= User.find_by(session[:user_id]) %></a></li>
+            <% else %>
+               <li><a href="<%= root_url %>/auth/twitter">Login</a></li>
+            <% end %>
+	    		</ul>
+    		</div>
+
+      </div>
+    </div>
+  </div>
+</div>

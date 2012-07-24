@@ -8,13 +8,15 @@
 </head>
 <body>
 
-<div class="container">
-	<div class="row">
-		<%= render 'layouts/flash_messages' %>
-		
-		<%= yield %>		
+	<%= render 'layouts/header' %>
+
+	<div class="container main_content">
+		<div class="row">
+			<%= render 'layouts/flash_messages' %>
+			
+			<%= yield %>		
+		</div>
 	</div>
-</div>
 
 </body>
 </html>
