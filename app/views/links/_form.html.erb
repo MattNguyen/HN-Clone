@@ -1,20 +1,13 @@
 <div class="span4">
-	<%= form_for(@link) do |f|%>
+	<div class="sidebar">
+		<div class="create_entry_form">
+			<%= form_for(@link) do |f|%>
 
-<!-- 		<% if @link.errors.any? %>
-			<div id="error_explanation">
-				<h2>				</h2>
-				<ul>
-					<% @link.errors.full_messages.each do |msg| %>
-						<li><%= msg %></li>
-					<% end -%>
-				</ul>
-			</div>
-		<% end -%> -->
+				<%= f.text_field :title,:placeholder => "Title" %>
+				<%= f.text_field :url, :placeholder => "URL" %>
 
-		<%= f.text_field :title,:placeholder => "Title" %>
-		<%= f.text_field :url, :placeholder => "URL" %>
-
-		<%= f.submit :class => "btn submit_button" %>
-	<% end -%>
+				<%= f.submit :class => "btn submit_button pull-right" %>
+			<% end -%>
+		</div>
+	</div>
 </div>	

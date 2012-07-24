@@ -1,1 +1,3 @@
-$('$new_entries').prepend(<% j(render 'entry', :link => @link) %>)
+var entry = "<% j(render 'entry', :link => @link) %>";
+$('#new_entries').prepend(entry);
+alert('here we go');
