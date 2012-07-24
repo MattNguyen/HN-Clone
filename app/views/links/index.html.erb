@@ -1,8 +1,8 @@
 <div class="span8 link_manifest">
 	<ol id="new_entries">
-	<% @links.each do |link| %>
-		<%= render 'entry', :link => link %>
-	<% end -%>
+		<% @links.each do |link| %>
+			 <%= render 'entry', :link => link %>
+		<% end -%>
 	</ol>
 
 	<%= paginate @links %>

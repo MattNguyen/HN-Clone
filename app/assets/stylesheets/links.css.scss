@@ -1,5 +1,30 @@
 @import 'bootstrap';
+@import 'compass';
+
+body {
+	@include background(image-url("noise_lines.png"));
+	height: 100%;
+	margin: 0;	
+	padding: 0;
+}
+
+.container {
+	background-color: white;
+	height: 100%;
+}
 
 ul {
 	list-style: none;
 }
+
+input {
+	width: 250px;
+}
+
+.sidebar {
+	border-left: 1px solid #CCC;
+	height: 100%;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
