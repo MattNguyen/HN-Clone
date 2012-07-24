@@ -75,3 +75,18 @@ header.navbar {
 	border-top-color: black;
 	border-bottom-color: black;
 }
+
+/* Entry */
+
+.edit_link {
+  float: right;
+  visibility: hidden;
+}
+
+
+.single_entry:hover {
+  background-color: #fafafa;
+  .edit_link {
+    visibility: visible;
+  }
+}

@@ -1,0 +1,9 @@
+<div class="create_entry_form">
+	<%= form_for(@link) do |f|%>
+
+		<%= f.text_field :title,:placeholder => "Title" %>
+		<%= f.text_field :url, :placeholder => "URL" %>
+
+		<%= f.submit :class => "btn submit_button pull-right" %>
+	<% end -%>
+</div>
