@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-	has_many :authorizations
+	has_many :authorizations, :links
 	validates :twitter_handle, :presence => true
 
 	def add_provider(auth_hash)

@@ -6,11 +6,9 @@ class LinksController < ApplicationController
 
 	def create
 		@link = Link.new(params[:link])
-		if @link.save
-			flash[:success] = "You successfully added a new link!"
-		else
-			flash[:error] = "Don't suck."
-		end
+		
+		flash[:error] = "Making itself intelligible is suicide for philosophy. But not for links, stupid." unless @link.save
+
 		redirect_to :links
 	end
 

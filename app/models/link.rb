@@ -1,3 +1,5 @@
 class Link < ActiveRecord::Base
-#	validates :url, :uniqueness => true, :presence => true
+	belongs_to :user
+	validates :url, :uniqueness => true, :presence => true
+
 end
