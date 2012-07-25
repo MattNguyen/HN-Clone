@@ -32,6 +32,7 @@ class StoriesController < ApplicationController
 	end
 
 	def edit
+		time_limit_enforcement( @story )
 	end
 
 	private

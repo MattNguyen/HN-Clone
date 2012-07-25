@@ -28,4 +28,8 @@ class ApplicationController < ActionController::Base
     
     redirect_to :root, :notice => "That ain't yours." unless current_user?( user )
   end
+
+  def time_limit_enforcement(story)
+    redirect_to :root, :notice => "You're too late." unless story.new?
+  end
 end
