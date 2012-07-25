@@ -12,7 +12,10 @@ ul {
 	list-style: none;
 }
 
-
+/* Override defaults */
+.span4 {
+  width: 299px;
+}
 
 /* Layout */
 .container {
@@ -89,15 +92,12 @@ header.navbar {
 	border-bottom-color: black;
 }
 
-
-
 /* Entry */
 
 .edit_link {
   float: right;
   visibility: hidden;
 }
-
 
 .single_entry:hover {
   background-color: #fafafa;
