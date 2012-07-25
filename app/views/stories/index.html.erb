@@ -1,0 +1,11 @@
+<div class="span8">
+	<ol id="new_entries">
+		<% @stories.each do |story| %>
+			 <%= render 'entry', :story => story %>
+		<% end -%>
+	</ol>
+
+	<%= paginate @stories %>
+</div>
+
+<%= render 'form' %>

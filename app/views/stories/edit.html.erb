@@ -1,5 +1,5 @@
 <div class="span6 offset3">
-	<%= form_for(@link, :html => {:class => "form-horizontal"}) do |f| %>
+	<%= form_for(@story :html => {:class => "form-horizontal"}) do |f| %>
 
 		<%= f.text_field :title,:placeholder => "Title" %>
 		<%= f.text_field :url, :placeholder => "URL" %>

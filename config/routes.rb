@@ -1,9 +1,9 @@
 HnClone::Application.routes.draw do
 
-  resources :links
+  resources :stories
   resources :users
 
-  root :to => 'links#index'
+  root :to => 'stories#index'
 
 	## OmniAuth Sessions -- http://net.tutsplus.com/tutorials/ruby/how-to-use-omniauth-to-authenticate-your-users/
 	get '/login', :to => 'sessions#new', :as => :login

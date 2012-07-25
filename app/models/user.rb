@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 	has_many :authorizations
-	has_many :links
+	has_many :stories
 	validates :twitter_handle, :presence => true, :uniqueness => true
 
 
