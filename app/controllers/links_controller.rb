@@ -1,9 +1,10 @@
 class LinksController < ApplicationController
 	before_filter :signed_in_user, :only => [:edit, :update]
 	before_filter :correct_user, :only => [:edit, :update]
+	before_filter :find_id, :only => [:edit, :update, :show]
 
 	def index
-		@links = Link.scoped.order('created_at DESC').page(params[:page])
+		@links = Link.order('created_at DESC').page(params[:page])
 		@link = Link.new
 	end
 
@@ -22,20 +23,21 @@ class LinksController < ApplicationController
 	end
 
 	def update
-		@link = Link.find(params[:id])
 		@link.update_attributes(params[:link])
 		redirect_to :root
 	end
 
 	def show
-		@link = Link.find(params[:id])
 	end
 
 	def edit
-		@link = Link.find(params[:id])
 	end
 
 	private
+
+	def find_id
+		@link = Link.find(params[:id])
+	end
 
 	def signed_in_user
 		redirect_to :root, :notice => "Please sign in." unless signed_in?
