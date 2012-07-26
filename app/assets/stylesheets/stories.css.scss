@@ -77,8 +77,12 @@ header.navbar {
 
 /* Entry */
 
-.hover_hidden{
-  visibility: hidden;
+.hover_hidden {
+  visibility: visible;
+}
+
+.edit_button {
+  margin-top: 10px;
 }
 
 .single_entry:hover {
