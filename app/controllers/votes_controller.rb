@@ -1,6 +1,8 @@
 class VotesController < ApplicationController
 
+
 	def create
+		current_user = anonymous_user unless current_user
 		@story = Story.find_by_id( params[:target_id] )
 
 		@vote = current_user.votes.find_or_create_by_target_id( @story.id )

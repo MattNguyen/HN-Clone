@@ -1,0 +1,4 @@
+<% if target.votable_by?( current_or_anonymous_user ) %>
+	<%= link_to   'up', votes_path( vote_params( :positive, target ) ), :remote => true, :method => :post %>
+	<%= link_to 'down', votes_path( vote_params( :negative, target ) ), :remote => true, :method => :post %>
+<% end %>

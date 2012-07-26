@@ -1,10 +1,14 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  helper_method :current_user
+  helper_method :current_user, :current_or_anonymous_user
   # Makes :current_user accessible to views
 
   def signed_in?
   	current_user
+  end
+
+  def current_or_anonymous_user
+    current_user || anonymous_user
   end
 
   def current_user

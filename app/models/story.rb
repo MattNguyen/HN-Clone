@@ -5,6 +5,10 @@ class Story < ActiveRecord::Base
 	before_save :sentence_finisher
 	validates :url, :uniqueness => true, :presence => true
 
+	def votable_by?(user)
+		!self.belongs_to?( user ) && !self.voted_on_by?( user )
+	end
+
 	def new?
 		( Time.zone.now - self.created_at ).to_i < 900
 	end
@@ -17,8 +21,12 @@ class Story < ActiveRecord::Base
 		self.user == user
 	end
 
+	def voted_on_by?(user)
+		self.votes.find_by_user_id( user.id )
+	end
+
 	def score
-		self.upvotes.count - self.downvotes.count		
+		self.upvotes.count - self.downvotes.count
 	end
 
 	def upvotes

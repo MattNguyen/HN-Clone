@@ -1,10 +1,11 @@
 var obj = $("#story_<%= @story.id %>_votes");
+var change = function(value){
+	obj.text( parseInt( obj.text() ) + value )
+}
 
 
 if ('<%= params[:attitude] %>' == 'positive'){
-	obj.text( parseInt( obj.text() ) + 1 );
+	change(1);
 } else {
-	obj.text( parseInt( obj.text() ) - 1 );
+	change(-1);
 }
-
-obj.attr("id", "broken");
