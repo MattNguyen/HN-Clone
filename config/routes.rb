@@ -1,7 +1,13 @@
 HnClone::Application.routes.draw do
 
-  resources :stories
+  resources :stories do
+  	member do
+  		post 'vote'
+  	end
+  end
+  
   resources :users
+  resources :votes, :only => [:create, :update]
 
   root :to => 'stories#index'
 

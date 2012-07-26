@@ -8,6 +8,7 @@ gem 'omniauth-facebook'
 group :development, :test do
 	gem 'sqlite3'
 	gem 'quiet_assets'
+	gem 'jazz_hands'
 end
 
 group :production do

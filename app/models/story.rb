@@ -1,5 +1,7 @@
 class Story < ActiveRecord::Base
 	belongs_to :user
+	has_many :votes, :as => :target
+
 	before_save :sentence_finisher
 	validates :url, :uniqueness => true, :presence => true
 
@@ -13,5 +15,17 @@ class Story < ActiveRecord::Base
 
 	def belongs_to?(user)
 		self.user == user
+	end
+
+	def score
+		self.upvotes.count - self.downvotes.count		
+	end
+
+	def upvotes
+		self.votes.where(:attitude => 'positive')
+	end
+
+	def downvotes
+		self.votes.where(:attitude => 'negative')
 	end
 end

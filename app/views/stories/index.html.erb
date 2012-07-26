@@ -1,6 +1,6 @@
 <div class="span8">
 	<ol id="new_entries">
-		<% @stories.each do |story| %>
+		<% @stories.sort_by(&:score).reverse.each do |story| %>
 			 <%= render 'entry', :story => story %>
 		<% end -%>
 	</ol>

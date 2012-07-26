@@ -1,12 +1,21 @@
 <li class="single_entry">
 	<ul>
 		<li>
-			<h3><%= link_to story.title, url_with_protocol( story.url ), :target => '_blank' %>
-				<% if story.new? && story.belongs_to?(current_user) %>
-
-			</h3><%= link_to "edit", edit_story_path( story ), :class => "hover_hidden pull-right edit_button btn" %>
+			<h3 class="inline">
+				<span id="story_<%= story.id %>_votes"><%= story.score %></span>
+				<%= link_to story.title, url_with_protocol( story.url ), :target => '_blank' %>
+				<% unless story.belongs_to?(current_user) %>
+					<%= link_to 'up', votes_path(:target_id => story.id, :target_type => "Story", :attitude => "positive"), :remote => true, :method => :post %>
+					<%= link_to 'down', votes_path(:target_id => story.id, :target_type => "Story", :attitude => "negative"), :remote => true, :method => :post %>
 				<% end %>
+			</h3>
+
+			<% if story.new? && story.belongs_to?(current_user) %>
+				<%= link_to "edit", edit_story_path( story ), :class => "hover_hidden pull-right edit_button" %>
+			<% end %>
+
 		</li>
+
 		<li>
 			<%= "#{story.url} via @#{story.user.twitter_handle}" %>
 		</li>

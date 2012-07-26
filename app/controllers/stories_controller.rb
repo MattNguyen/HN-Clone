@@ -6,15 +6,15 @@ class StoriesController < ApplicationController
 
 	def index
 		@stories = Story.order('created_at DESC').page( params[:page] )
-		@story  = Story.new
+		@story   = Story.new
 	end
 
 
 	def create
-		@story      = Story.new( params[:story] )
-		@story.user = current_user || anonymous_user
+		@story      	= Story.new( params[:story] )
+		@story.user 	= current_user || anonymous_user
 
-		heidegger = "Making itself intelligible is suicide for philosophy. But not for stories, stupid."
+		heidegger 		= "Making itself intelligible is suicide for philosophy. But not for stories, stupid."
 		flash[:error] = heidegger unless @story.save
 
 		redirect_to :root
@@ -37,10 +37,10 @@ class StoriesController < ApplicationController
 	end
 
 
-	def edit
+	def edit	 
 		time_limit_enforcement( @story )
 	end
-
+	
 
 	private
 
