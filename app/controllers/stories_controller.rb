@@ -5,7 +5,7 @@ class StoriesController < ApplicationController
 
 
 	def index
-		@stories = Story.order('created_at DESC').page( params[:page] )
+		@stories = Story.page( params[:page] )
 		@story   = Story.new
 	end
 
@@ -34,6 +34,9 @@ class StoriesController < ApplicationController
 
 
 	def show
+		# @comment = Comment.new
+		@story = Story.find( params[:id] )
+		# @story.comments.build( @comment )
 	end
 
 

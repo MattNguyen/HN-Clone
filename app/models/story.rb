@@ -1,6 +1,7 @@
 class Story < ActiveRecord::Base
 	belongs_to :user
 	has_many :votes, :as => :target
+	has_many :comments, :as => :parent
 
 	before_save :sentence_finisher
 	validates :url, :uniqueness => true, :presence => true

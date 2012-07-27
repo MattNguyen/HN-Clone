@@ -1,7 +1,12 @@
 HnClone::Application.routes.draw do
 
-  resources :comments
-  resources :stories  
+  
+	[:comments, :stories].each do |resource|
+		resources(resource) do
+			resources :comments
+		end
+	end
+
   resources :users
   resources :votes, :only => [:create, :update]
 

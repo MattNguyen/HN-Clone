@@ -6,6 +6,7 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 
 group :development, :test do
+	gem 'faker'
 	gem 'sqlite3'
 	gem 'quiet_assets'
 	gem 'jazz_hands'

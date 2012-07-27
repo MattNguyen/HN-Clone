@@ -1,0 +1,11 @@
+<ul>
+	<% @comments.each do |comment| %>
+	<li>
+		<ul>
+			<li><%= "Body: #{comment.body}" %></li>
+			<li><%= "User: #{comment.user}" %></li>
+			<li><%= "Parent: #{comment.parent}" %></li>
+		</ul>
+		<br>
+	<% end %>
+</ul>
