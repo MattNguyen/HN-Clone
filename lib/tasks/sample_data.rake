@@ -3,21 +3,25 @@ require 'faker'
 namespace :db do
   desc  "Fill database with sample database"
   task populate: :environment do
-    # Story.create!(url: "URl",
-    #             title: "Title")
 
-    # User.create!(twitter_handle: "Example User")
 
     99.times do |n|
       url = "www.#{n}-example.com"
       title = Faker::Company.catch_phrase
+      body = Faker::Lorem.paragraph
 
       Story.create!(url: url,
                   title: title,
                   user_id: (rand(20) + 1))
 
-      twitter_handle  = Faker::Name.name
-      User.create!(twitter_handle: twitter_handle)
+      User.create!(twitter_handle: Faker::Name.name )
+
+      8.times do  
+        Comment.create!(body: body,
+                        user_id: (rand(99) + 1),
+                        parent_id: (rand(99) + 1),
+                        parent_type: "Story")
+      end
     end
   end
 end

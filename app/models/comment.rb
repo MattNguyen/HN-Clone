@@ -1,5 +1,5 @@
 class Comment < ActiveRecord::Base
-	attr_accessible :body
+	attr_accessible :body, :user_id, :parent_id, :parent_type
 
 	belongs_to :user
 	belongs_to :parent, :polymorphic => true
