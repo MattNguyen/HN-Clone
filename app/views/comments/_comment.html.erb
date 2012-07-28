@@ -1,7 +1,14 @@
 <li class="comment">
-	<%= comment.body %>
+	<p>
+		<span>
+			<%= comment.body %>
+		</span> 
+		<span>
+			--@<%= User.find_by_id(comment.user_id).twitter_handle %>
+		</span>
 
-	<%= link_to "Reply", new_comment_comment_path(comment) %>
+		<%= link_to "Reply", new_comment_comment_path(comment), :class => "reply_comment_link" %>
+	</p>
 
 	<% unless comment.comments.empty? %>
 		<ol class="comment_list">

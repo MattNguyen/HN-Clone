@@ -24,10 +24,6 @@ class CommentsController < ApplicationController
 		@parent = Story.find_by_id(params[:story_id]) if params[:story_id]
 		@parent = Comment.find_by_id(params[:comment_id]) if params[:comment_id]
 
-		p '------------------------'
-		p @parent
-		p '------------------------'
-
 		redirect_to root_path unless defined?(@parent)
 	end
 end
