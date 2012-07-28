@@ -1,0 +1,6 @@
+<h3><%= @comment.body %></h3>
+
+<%= form_for [@comment, @new_comment] do |f| %>
+	<%= f.text_area :body %>
+	<%= f.submit "Comment!" %>
+<% end -%>

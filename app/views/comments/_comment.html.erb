@@ -1,3 +1,11 @@
 <li class="comment">
-<%= comment.body %>
+	<%= comment.body %>
+
+	<%= link_to "Reply", new_comment_comment_path(comment) %>
+
+	<% unless comment.comments.empty? %>
+		<ol class="comment_list">
+			<%= render :partial => 'comments/comment', :collection => comment.comments %>
+		</ol>
+	<% end %>
 </li>

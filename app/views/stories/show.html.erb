@@ -5,13 +5,12 @@
 <section class="comments">
 	<h3>Comments</h3>
 
-	<p><%= link_to 'Add a Comment', new_story_comment_path(@story) %></p>
-
 	<%= form_for [@story, @comment] do |f| %>
 		<%= f.text_area :body %>
 		<%= f.submit "Comment!" %>
 	<% end -%>
+	
 	<ol>
-		<%= render (@story.comments) || "There are no comments." %>
+		<%= render @story.comments %>
 	</ol>
 </section>
